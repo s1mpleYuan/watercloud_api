@@ -6,5 +6,9 @@
 		"user" : "admin",
 		"password" : "981222",
 		"port" : 3306
+	},
+	"jwt_config" : {
+		"secretKey":"yuanqingyan",
+		"expiresIn":86400
 	}
 }
