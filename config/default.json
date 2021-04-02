@@ -1,0 +1,10 @@
+{
+	"db_config" : {
+		"protocol" : "mysql",
+		"host" : "118.178.197.214",
+		"database" : "watercloud",
+		"user" : "admin",
+		"password" : "981222",
+		"port" : 3306
+	}
+}
