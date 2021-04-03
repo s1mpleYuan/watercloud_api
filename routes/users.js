@@ -1,7 +1,6 @@
 var express = require("express");
 var router = express.Router();
 
-
 // 获取业务模块
 var usersServ = require('../services/usersService');
 
@@ -10,10 +9,15 @@ router.use(function (req, res, next) {
   next()
 })
 
-router.get('/login',
+router.post('/login',
+  // token校验
+  (req, res, next) => {
+    console.log(req.body, "res.body");
+    next();
+  },
   // 业务逻辑
   (req, res) => {
-    const { loginStr, pwd } = req.query;
+    const { loginStr, pwd } = req.body;
     usersServ.login(
       loginStr,
       pwd,

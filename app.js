@@ -1,6 +1,12 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
 const port = 8888;
+
+// 公共系统初始化
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+
 
 // 设置统一的响应格式
 var resextra = require('./modules/resextra');
