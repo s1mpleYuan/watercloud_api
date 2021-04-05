@@ -1,25 +1,19 @@
-var mysql = require('mysql');
-var logUtil = require('../utils/console');
-var fs = require('fs');
+// var logUtil = require('../utils/console');
+const mysql = require('mysql');
 
-let config_json = fs.readFileSync('./config/default.json');
-const db_config = JSON.parse(config_json).db_config;
+// mysql.createConnection
+const db_config = require("config").get("db_config");
 
-var conn = mysql.createConnection(db_config);
-
-// console.log('数据库连接参数：%s', db_config);
-logUtil.printPromptInfo('数据库连接成功,连接参数为:', db_config);
-
-initDatabase = () => {
+module.exports.connect = (conn, cb) => {
 	conn.connect(err => {
 		if (err) {
-			console.log('[MySQL Connect Error]: Error Message=>%s', err.stack);
+			cb(err);
 			return;
 		}
-	})
-};
+		console.log('数据库已连接');
+	});
+}
 
-module.exports.getDatabase = () => {
-	initDatabase();
-	return conn;
-};
+module.exports.getConnection = () => {
+	return conn = mysql.createConnection(db_config);
+}

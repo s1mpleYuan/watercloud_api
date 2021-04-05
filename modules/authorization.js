@@ -10,7 +10,7 @@ module.exports.createToken = (uid = jwt_config.get("uid"), sub = jwt_config.get(
   };
   const token = jwt.sign(header, jwt_config.get("secretKey"), { "expiresIn": jwt_config.get("expiresIn") });
   // var token = jwt.sign({ "uid": uid, "sub": sub }, jwt_config.get("secretKey"), { "expiresIn": jwt_config.get("expiresIn") });
-  return "Bearer " + token;
+  return token;
 }
 
 module.exports.tokenAuth = (token, cb) => {

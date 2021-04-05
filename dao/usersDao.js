@@ -8,12 +8,14 @@ var databaseModules = require('../modules/database');
  * @param {*} cb 回调函数
  */
 module.exports.login = (loginStr, pwd, cb) => {
-  db = databaseModules.getDatabase();
+  const conn = databaseModules.getConnection();
+  databaseModules.connect(conn);
   const sql = `select username, account, enterprise_code as code from admin where username = ${loginStr} and password = ${pwd} or account = ${loginStr} and password = ${pwd}`;
-  db.query(sql, (err, result) => {
+  conn.query(sql, (err, result) => {
     if (err) {
-      return cb(err);
+      cb(err);
     }
     cb(null, result);
   })
+  conn.end();
 }

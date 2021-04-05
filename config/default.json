@@ -11,6 +11,6 @@
 		"uid": "yuanqingyan",
 		"sub": "tokenAuth",
 		"secretKey":"yuanqingyan",
-		"expiresIn": 600000
+		"expiresIn": "1h"
 	}
 }
