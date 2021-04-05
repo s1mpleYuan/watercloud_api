@@ -52,9 +52,10 @@ app.all('*',
 					}
 					return res.sendResult(null, 401, err);
 				}
-				next();
+				// next();
 			});
-			// next();
+			console.log('校验通过');
+			next();
 		}
 	}
 );
@@ -63,6 +64,7 @@ app.all('*',
 // 路由引入
 // 用户相关业务模块
 app.use('/users', require('./routes/users'));
+app.use('/enterprises', require('./routes/enterprise'));
 
 
 

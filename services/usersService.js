@@ -7,12 +7,6 @@ var usersDao = require(path.join(process.cwd(), 'dao/usersDao'));
  * @param {*} pwd 密码（md5）
  */
 module.exports.login = (loginStr, pwd, cb) => {
-  if (!loginStr) {
-    return cb('用户名或账户号不能为空');
-  }
-  if (!pwd) {
-    return cb('密码不能为空');
-  }
   usersDao.login(loginStr, pwd, (err, result) => {
     cb(err, result);
   })

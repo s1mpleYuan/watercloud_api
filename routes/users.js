@@ -6,10 +6,6 @@ const log4js = require('../utils/logger');
 // 获取业务模块
 var usersServ = require('../services/usersService');
 
-router.use(function (req, res, next) {
-  // .. some logic here .. like any other middleware
-  next()
-})
 
 router.post('/login',
   // 参数校验
@@ -43,10 +39,5 @@ router.post('/login',
   }
 );
 
-router.get('/test',
-  (req, res, next) => {
-
-  }
-)
 
 module.exports = router;
