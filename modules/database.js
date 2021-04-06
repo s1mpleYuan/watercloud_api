@@ -10,7 +10,6 @@ module.exports.connect = (conn, cb) => {
 			cb(err);
 			return;
 		}
-		console.log('数据库已连接');
 	});
 }
 

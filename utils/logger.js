@@ -51,22 +51,22 @@ module.exports.loggerOutput = (level, log) => {
   const { apiName, result, message } = log; 
   switch (level) {
     case "TRACE":
-      consoleLogger.trace(`[${apiName}] - [${result}] - ${message}`);
+      consoleLogger.trace(`${apiName} - ${result} - ${message}`);
       break;
     case "DEBUG":
-      consoleLogger.debug(`[${apiName}] - [${result}] - ${message}`);
+      consoleLogger.debug(`${apiName} - ${result} - ${message}`);
       break;
     case "INFO":
-      api_use_logger.info(`[${apiName}] - [${result}] - ${message}`);
+      api_use_logger.info(`${apiName} - ${result} - ${message}`);
       break;
     case "WARN":
-      api_use_logger.warn(`[${apiName}] - [${result}] - ${message}`);
+      api_use_logger.warn(`${apiName} - ${result} - ${message}`);
       break;
     case "ERROR":
-      errorLogger.error(`[${apiName}] - [${result}] - ${message}`);
+      errorLogger.error(`${apiName} - ${result} - ${message}`);
       break;
     case "FATAL":
-      errorLogger.fatal(`[${apiName}] - [${result}] - ${message}`);
+      errorLogger.fatal(`${apiName} - ${result} - ${message}`);
       break;
     default:
       break;

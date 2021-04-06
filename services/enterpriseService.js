@@ -1,5 +1,4 @@
 var path = require('path');
-const { createBrotliCompress } = require('zlib');
 var enterpriseDao = require(path.join(process.cwd(), 'dao/enterpriseDao'));
 
 /**

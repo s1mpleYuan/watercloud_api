@@ -43,7 +43,7 @@
 ### 1.2.1 登录接口说明
 
 + 请求路径：`/users/login`
-+ 请求方法：**post**
++ 请求类型：**post**
 + 请求参数：
 
 | 参数名   | 参数说明         | 备注     |
@@ -59,7 +59,7 @@
 | account  | 用户的账号     |                                      |
 | code     | 账户所属的企业 | MySQL数据库中的字段为enterprise_code |
 
-+ 响应数据
++ 响应格式：
 
 ```json
 {
@@ -75,3 +75,76 @@
 ```
 
 ## 1.3 企业 Enterprise
+
+### 1.3.1 查询所有注册企业信息
+
++ 请求路径：`/enterprises/getEnterpriseList`
++ 请求类型：**get**
++ 请求参数：无
++ 响应格式：
+
+```json
+{
+    "data":[
+        {
+            "enterprise_code": "956",
+            "enterprise_name": "Yata",
+            "enterprise_addr": "3 Graedel Circle",
+            "legal_person": "伟菘",
+            "enterprise_tele": "780-535-7135"
+        },
+        {
+            "enterprise_code": "9686",
+            "enterprise_name": "Twitterbridge",
+            "enterprise_addr": "9993 Fieldstone Pass",
+            "legal_person": "亦涵",
+            "enterprise_tele": "715-637-6247"
+        }
+    ],
+    "code": 200,
+    "msg": "查询成功！"
+}
+```
+
+## 1.4 WaterMeter 水表
+
+### 1.4.1 查询水表抄收记录
+
++ 请求路径：`/watermeter/queryWaterMeterCopyRecords`
++ 请求类型：**post**
++ 请求参数：
+
+| 参数名    | 参数说明             | 备注                                     |
+| --------- | -------------------- | ---------------------------------------- |
+| condition | 查询搜索过滤值       | 可为空，意为没有搜索条件条件，但不为null |
+| fields    | 需要查询的字段的数组 | 数组长度可为0 即 查询全部，但不为null    |
+
++ 响应格式：
+
+```json
+{
+    "data":[
+        {
+            "Record_id": 2,
+            "Task_id": 1,
+            "User_code": "370602011011001",
+            "House_number": "",
+            "Equipment_code": "LXL20C2103030010",
+            "Settled_traffic": 0,
+            "Cumulative_traffic": 0,
+            "Last_used": 0,
+            "Balance": 0,
+            "Voltage": 0,
+            "Signal_strength": 0,
+            "Consumption": 0,
+            "Status": "0",
+            "Equipment_time": "2021-03-13T01:24:30.000Z",
+            "Copy_time": "2021-03-13T01:24:43.000Z"
+        },
+        // ...
+    ],
+    "code": 200,
+    "msg": "查询成功！"
+}
+```
+

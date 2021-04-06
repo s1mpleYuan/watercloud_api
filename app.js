@@ -1,6 +1,7 @@
 var express = require("express");
 var bodyParser = require('body-parser');
 var authorization = require('./modules/authorization');
+const log4js = require('./utils/logger');
 var app = express();
 const port = 8888;
 
@@ -42,6 +43,7 @@ app.all('*',
 			authorization.tokenAuth(req_token, (err, decode) => {
 				// 
 				if (err) {
+					console.log(err, 'ERROR');
 					const { name, message } = err;
 					if (name === 'TokenExpiredError' && message === 'jwt expired') {
 						return res.sendResult(null, 401, 'Token已过期，请重新登录！');
@@ -52,10 +54,11 @@ app.all('*',
 					}
 					return res.sendResult(null, 401, err);
 				}
-				// next();
+				const log = log4js.setLog('TokenAuth', 'success', 'token验证通过');
+				log4js.loggerOutput("DEBUG", log);
+				// console.log('校验通过');
+				next();
 			});
-			console.log('校验通过');
-			next();
 		}
 	}
 );
@@ -65,10 +68,15 @@ app.all('*',
 // 用户相关业务模块
 app.use('/users', require('./routes/users'));
 app.use('/enterprises', require('./routes/enterprise'));
-
+app.use('/watermeter', require('./routes/watermeter'));
 
 
 app.get('/test', (req, res, next) => {
 	res.sendResult(null, 200, 'waterclound接口测试成功');
 })
-app.listen(port, () => console.log(`watercloud app listening on http://localhost:${port} !`))
+app.listen(port,
+	() => {
+		const log = log4js.setLog("server", "start", `watercloud app listening on http://localhost:${port}`);
+		log4js.loggerOutput("TRACE", log);
+	}
+);

@@ -15,7 +15,7 @@ module.exports.login = (loginStr, pwd, cb) => {
     if (err) {
       cb(err);
     }
-    cb(null, result);
+    else cb(null, result);
   })
   conn.end();
 }
