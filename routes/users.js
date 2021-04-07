@@ -29,11 +29,19 @@ router.post('/login',
           const log = log4js.setLog("/users/login", "failure", "登录失败，请检查登录账户和密码的正确性");
           log4js.loggerOutput("DEBUG", log)
           return res.sendResult(null, 404, '登录失败，请检查登录账户和密码的正确性');
+        } else {
+          const { enabled } = loginResult;
+          if (enabled == '0') {
+            const log = log4js.setLog("/users/login", "failure", "登录失败，该账户已被封禁，请联系管理员");
+            log4js.loggerOutput("DEBUG", log)
+            return res.sendResult(null, 404, '登录失败，该账户已被封禁，请联系管理员！');
+          } else {
+            loginResult["token"] = authorization.createToken();
+            const log = log4js.setLog("/users/login", "success", `${loginResult.username} 登录成功`);
+            log4js.loggerOutput("INFO", log);
+            res.sendResult(loginResult, 200, '登录成功');
+          }
         }
-        loginResult["token"] = authorization.createToken();
-        const log = log4js.setLog("/users/login", "success", `${loginResult.username} 登录成功`);
-        log4js.loggerOutput("INFO", log)
-        res.sendResult(loginResult, 200, '登录成功')
       }
     )
   }

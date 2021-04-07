@@ -53,21 +53,33 @@
 
 + 响应参数
 
-| 参数名   | 参数说明       | 备注                                 |
-| -------- | -------------- | ------------------------------------ |
-| username | 用户的账户名   |                                      |
-| account  | 用户的账号     |                                      |
-| code     | 账户所属的企业 | MySQL数据库中的字段为enterprise_code |
+| 参数名       | 参数说明               | 备注                                |
+| ------------ | ---------------------- | ----------------------------------- |
+| username     | 用户的账户名           |                                     |
+| account      | 用户的账号             |                                     |
+| code         | 账户所属的企业         |                                     |
+| enabled      | 账户是否被封禁         | 1为未被封禁，0为已封禁              |
+| auth         | 账户的权限             | 1为管理员，2为用户（供水/物业公司） |
+| en_name      | 账户所属企业的名称     |                                     |
+| addr         | 账户所属企业的地址     |                                     |
+| legal_person | 账户所属企业的法人     |                                     |
+| tele         | 账户所属企业的联系方式 |                                     |
 
 + 响应格式：
 
 ```json
 {
     "data": {
-        "username": "admin01",
-        "account": "110011",
-        "code": "0000",
-        "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ5dWFucWluZ3lhbiIsInN1YiI6InRva2VuQXV0aCIsImlhdCI6MTYxNzQ0OTAxOSwiZXhwIjoxNjE4MDQ5MDE5fQ.DjFE5MflUxeyOGMFayhsfzDAHwywXQF-PWTkffA_6No"
+        "username": "yqy1",
+        "account": "20172203222",
+        "code": "000",
+        "enabled": 1,
+        "auth": 1,
+        "en_name": "鲁东大学",
+        "addr": "山东省烟台市芝罘区红旗中路世回尧街道",
+        "legal_person": "xxx",
+        "tele": "xxx-xxx-xxxx",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ5dWFucWluZ3lhbiIsInN1YiI6InRva2VuQXV0aCIsImlhdCI6MTYxNzgwMjYzNSwiZXhwIjoxNjE3ODA0NDM1fQ.u85zzzrTgxpdqu8erjFJIybnX6AQe4yQhn1YskMwc60"
     },
     "code": 200,
     "msg": "登录成功"
