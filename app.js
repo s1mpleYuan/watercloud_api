@@ -43,7 +43,6 @@ app.all('*',
 			authorization.tokenAuth(req_token, (err, decode) => {
 				// 
 				if (err) {
-					console.log(err, 'ERROR');
 					const { name, message } = err;
 					if (name === 'TokenExpiredError' && message === 'jwt expired') {
 						return res.sendResult(null, 401, 'Token已过期，请重新登录！');
@@ -54,8 +53,8 @@ app.all('*',
 					}
 					return res.sendResult(null, 401, err);
 				}
-				const log = log4js.setLog('TokenAuth', 'success', 'token验证通过');
-				log4js.loggerOutput("DEBUG", log);
+				// const log = log4js.setLog('TokenAuth', 'success', 'token验证通过');
+				// log4js.loggerOutput("DEBUG", log);
 				// console.log('校验通过');
 				next();
 			});

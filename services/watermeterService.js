@@ -1,5 +1,5 @@
 const watermeterDao = require('../dao/watermeterDao');
-
+const dayjs = require('dayjs');
 /**
  * 
  * @param {String} condition 搜索过滤值，可为空，不为null
@@ -7,7 +7,7 @@ const watermeterDao = require('../dao/watermeterDao');
  * @param {Function} cb 回调函数
  */
 module.exports.queryWaterMeterCopyRecordOfCondition = (condition, fields, cb) => {
-  if (fields && fields.length == 0) {
+  if (fields && fields.length == 14) {
     // 查询全部时
     var sql = 'select * ';
   } else {
@@ -21,22 +21,30 @@ module.exports.queryWaterMeterCopyRecordOfCondition = (condition, fields, cb) =>
     }
   }
   sql += ' from copy_record ';
-  for (const j in fields) {
-    if (j == 0) {
-      sql += 'where ';
-    }
-    sql += `${fields[j]} = ${condition}' `;
-    if (j != fields.length - 1) {
-      sql += 'or ';
+  if (condition) {
+    for (const j in fields) {
+      if (j == 0) {
+        sql += 'where ';
+      }
+      sql += `${fields[j]} like '%${condition}%' `;
+      if (j != fields.length - 1) {
+        sql += 'or ';
+      }
     }
   }
-  console.log(sql);
+  // console.log(sql);
   watermeterDao.queryWaterMeterCopyRecords(sql, (err, res) => {
     if (err) {
       return cb(err);
     } else {
       for (const i in res) {
-        res[i].Serials = Number(i) + 1;
+        const { Copy_time, Equipment_time } = res[i];
+        if (Copy_time) {
+          res[i].Copy_time = dayjs(Copy_time).format('YYYY-MM-DD HH:mm:ss');
+        }
+        if (Equipment_time) {
+          res[i].Equipment_time = dayjs(Equipment_time).format('YYYY-MM-DD HH:mm:ss');
+        }
       }
       return cb(null, res);
     }

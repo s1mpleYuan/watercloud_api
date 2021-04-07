@@ -10,19 +10,19 @@ const watermeterServ = require('../services/watermeterService');
  */
 router.post('/queryWaterMeterCopyRecords',
   (req, res, next) => {
+    console.log(req.body);
     const { condition, fields } = req.body;
     if (condition == null) {
       return res.sendResult(null, 400, '请传入condition参数');
     }
-    if (!fields) {
-      req.body.fields = [];
-      // return res.sendResult(null, 400, '请传入fields参数');
+    if (!fields || fields.length == 0) {
+      // req.body.fields = [];
+      return res.sendResult(null, 400, '请至少选择一个筛选框条件！');
     }
     next();
   },
   (req, res, next) => {
     const { condition, fields } = req.body;
-    // console.log(req.body);
     watermeterServ.queryWaterMeterCopyRecordOfCondition(condition, fields, (err, queryResult) => {
       if (err) {
         const log = log4js.setLog("/watermeter/queryWaterMeterCopyRecords", "error", err);

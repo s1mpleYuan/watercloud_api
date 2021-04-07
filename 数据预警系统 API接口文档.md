@@ -34,7 +34,7 @@
 | 203        | Deleted               | 删除成功                       |
 | 400        | Request Error         | 请求地址不存在或参数错误       |
 | 401        | No Authorized         | 未授权（没有Token或Token过期） |
-| 403        | Forbidden             | 被禁止访问                     |
+| 403        | Forbidden             | 访问失败                       |
 | 404        | Not Found             | 请求的资源不存在               |
 | 500        | Internal Server Error | 内部错误                       |
 

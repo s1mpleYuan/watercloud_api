@@ -25,15 +25,15 @@ router.post('/login',
           log4js.loggerOutput("ERROR", log)
           return res.sendResult(null, 500, err);
         }
-        if (!loginResult || !loginResult.length || loginResult.length == 0) {
+        if (!loginResult) {
           const log = log4js.setLog("/users/login", "failure", "登录失败，请检查登录账户和密码的正确性");
-          log4js.loggerOutput("INFO", log)
+          log4js.loggerOutput("DEBUG", log)
           return res.sendResult(null, 404, '登录失败，请检查登录账户和密码的正确性');
         }
-        loginResult[0]["token"] = authorization.createToken();
-        const log = log4js.setLog("/users/login", "success", `${loginResult[0].username} 登录成功`);
+        loginResult["token"] = authorization.createToken();
+        const log = log4js.setLog("/users/login", "success", `${loginResult.username} 登录成功`);
         log4js.loggerOutput("INFO", log)
-        res.sendResult(loginResult[0], 200, '登录成功')
+        res.sendResult(loginResult, 200, '登录成功')
       }
     )
   }
