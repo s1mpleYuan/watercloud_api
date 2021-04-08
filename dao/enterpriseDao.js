@@ -6,7 +6,9 @@ var databaseModules = require('../modules/database');
  */
 module.exports.queryEnterpriseList = (cb) => {
   const conn = databaseModules.getConnection();
-  databaseModules.connect(conn);
+  databaseModules.connect(conn, err=>{
+    console.log(err);
+  });
   const sql = "select * from enterprise_information where enterprise_code != '0000'";
   conn.query(sql, (err, result) => {
     if (err) {

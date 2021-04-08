@@ -10,7 +10,6 @@ const watermeterServ = require('../services/watermeterService');
  */
 router.post('/queryWaterMeterCopyRecords',
   (req, res, next) => {
-    console.log(req.body);
     const { condition, fields } = req.body;
     if (condition == null) {
       return res.sendResult(null, 400, '请传入condition参数');

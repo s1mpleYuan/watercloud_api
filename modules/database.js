@@ -7,6 +7,7 @@ const db_config = require("config").get("db_config");
 module.exports.connect = (conn, cb) => {
 	conn.connect(err => {
 		if (err) {
+			console.log(err);
 			cb(err);
 			return;
 		}

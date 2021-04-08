@@ -37,3 +37,38 @@ module.exports.login = (loginStr, pwd, cb) => {
     }
   });
 }
+
+/**
+ * 根据企代码和账户权限查询该账户所能配置的其他用户的账户信息
+ * @param {String} code 企业代码
+ * @param {String} auth 账户权限
+ * @param {Function} cb 回调函数
+ */
+module.exports.queryOtherUsersInfo = (code, auth, cb) => {
+  // 先查询企业信息
+  usersDao.queryEnterpriseInfoOfCode(code, (err, result) => {
+    if (err) {
+      return cb(err);
+    } else if (result) {
+      if (result.length > 0) {
+        const enterprise = JSON.parse(JSON.stringify(result))[0];
+        usersDao.queryOtherUsersInfo(code, auth, (err, result) => {
+          if (err) {
+            return cb(err);
+          } else if (result) {
+            const usersArray = JSON.parse(JSON.stringify(result));
+            let data = [];
+            for (const i in usersArray) {
+              data.push({
+                ...usersArray[i],
+                ...enterprise
+              });
+            }
+            return cb(null, data);
+          }
+        })
+      } else return cb(null, result);
+    }
+  })
+  // 再查询其他用户信息
+}

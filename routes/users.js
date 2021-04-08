@@ -47,5 +47,50 @@ router.post('/login',
   }
 );
 
+router.post('/queryOtherUsersInfo',
+  // 验证参数
+  (req, res, next) => {
+    const { code, auth } = req.body;
+    if (!code) {
+      const log = log4js.setLog("/users/queryOtherUsersInfo", "error", err);
+      log4js.loggerOutput("ERROR", log)
+      return res.sendResult(null, 400, '请传入code参数');
+    } else if (!auth) {
+      const log = log4js.setLog("/users/queryOtherUsersInfo", "error", err);
+      log4js.loggerOutput("ERROR", log)
+      return res.sendResult(null, 400, '请传入auth参数');
+    } else if (auth == '1') {
+      const log = log4js.setLog("/users/queryOtherUsersInfo", "error", err);
+      log4js.loggerOutput("ERROR", log)
+      return res.sendResult(null, 403, '非管理员账户没有配置其他用户的权限！');
+    } else next();
+  },
+  // 业务逻辑
+  (req, res, next) => {
+    const { code, auth } = req.body;
+    usersServ.queryOtherUsersInfo(code, auth, (err, queryResult) => {
+      if (err) {
+        const log = log4js.setLog("/users/queryOtherUsersInfo", "error", err);
+        log4js.loggerOutput("ERROR", log)
+        return res.sendResult(null, 403, err);
+      } else if (queryResult) {
+        if (queryResult.length === 0) {
+          const log = log4js.setLog("/users/queryOtherUsersInfo", "success", '查询成功，该管理员账户下没有其他用户账户，请添加！');
+          log4js.loggerOutput("DEBUG", log)
+          return res.sendResult(queryResult, 200, '查询成功，该管理员账户下没有其他用户账户，请添加！');
+        } else {
+          for (const i in queryResult) {
+            queryResult[i].user_serials = Number(i) + 1;
+          }
+          const log = log4js.setLog("/users/queryOtherUsersInfo", "success", '查询成功！');
+          log4js.loggerOutput("INFO", log)
+          return res.sendResult(queryResult, 200, '查询成功!');
+        }
+      } else {
+        next();
+      }
+    })
+  }
+)
 
 module.exports = router;
