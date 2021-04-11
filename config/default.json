@@ -1,6 +1,5 @@
 {
 	"db_config" : {
-		"protocol" : "mysql",
 		"host" : "118.178.197.214",
 		"database" : "watercloud",
 		"user" : "admin",

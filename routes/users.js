@@ -31,7 +31,7 @@ router.post('/login',
           return res.sendResult(null, 404, '登录失败，请检查登录账户和密码的正确性');
         } else {
           const { enabled } = loginResult;
-          if (enabled == '0') {
+          if (enabled == '1') {
             const log = log4js.setLog("/users/login", "failure", "登录失败，该账户已被封禁，请联系管理员");
             log4js.loggerOutput("DEBUG", log)
             return res.sendResult(null, 404, '登录失败，该账户已被封禁，请联系管理员！');
@@ -92,5 +92,45 @@ router.post('/queryOtherUsersInfo',
     })
   }
 )
+
+router.put('/editUserInfo',
+  (req, res, next) => {
+    const { userInfo } = req.body;
+    if (!userInfo) {
+      const log = log4js.setLog("/users/editUserInfo", "error", '参数不能为空！');
+      log4js.loggerOutput("ERROR", log)
+      return res.sendResult(null, 400, '参数不能为空！');
+    }
+    userInfo.enabled = Number(userInfo.enabled);
+    next();
+  },
+  (req, res, next) => {
+    const { userInfo } = req.body;
+
+    const { username, auth, code } = userInfo;
+    usersServ.checkUserAccount({ username, auth, code }, 'EDIT', (err, result) => {
+      if (err) {
+        return res.sendResult(null, 500, err);
+      } else {
+        usersServ.updateUserInfo(userInfo, (err, updateResult) => {
+          if (err) {
+            return res.sendResult(null, 500, err);
+          } else if (updateResult) {
+            if (updateResult == 'success') {
+              const log = log4js.setLog("/users/editUserInfo", "success", '修改成功！');
+              log4js.loggerOutput("INFO", log)
+              return res.sendResult(null, 200, '修改成功！');
+            } else if (updateResult == 'fail') {
+              const log = log4js.setLog("/users/editUserInfo", "fail", '修改失败,请联系管理员进行处理！');
+              log4js.loggerOutput("INFO", log)
+              return res.sendResult(null, 200, '修改失败,请联系管理员进行处理！');
+            }
+          }
+        })
+      }
+    });
+  }
+)
+
 
 module.exports = router;

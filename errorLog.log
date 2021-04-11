@@ -11,3 +11,14 @@
 [2021-04-07T17:00:52.596] [ERROR] errorLog - /watermeter/queryWaterMeterCopyRecords - error - Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from copy_record' at line 1
 [2021-04-07T17:01:09.520] [ERROR] errorLog - /watermeter/queryWaterMeterCopyRecords - error - Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from copy_record' at line 1
 [2021-04-07T19:29:53.841] [ERROR] errorLog - /users/login - error - Error: ER_BAD_FIELD_ERROR: Unknown column '8ff3d126b3da4292bd26ec500100c05b' in 'where clause'
+[2021-04-08T16:40:08.403] [ERROR] errorLog - /users/queryOtherUsersInfo - error - Error: connect ETIMEDOUT
+[2021-04-09T11:09:16.952] [ERROR] errorLog - /users/login - error - Error: connect EHOSTUNREACH 118.178.197.214:3306
+[2021-04-10T20:10:37.912] [ERROR] errorLog - /users/queryOtherUsersInfo - error - Error: connect ETIMEDOUT
+[2021-04-11T09:39:30.785] [ERROR] errorLog - /users/queryOtherUsersInfo - error - Error: connect ETIMEDOUT
+[2021-04-11T09:54:16.375] [ERROR] errorLog - /users/queryOtherUsersInfo - error - Error: connect ETIMEDOUT
+[2021-04-11T09:55:11.998] [ERROR] errorLog - /users/editUserInfo - error - 参数不能为空！
+[2021-04-11T10:00:15.686] [ERROR] errorLog - /users/queryOtherUsersInfo - error - Error: connect ETIMEDOUT
+[2021-04-11T10:00:19.111] [ERROR] errorLog - /users/queryOtherUsersInfo - error - Error: connect ETIMEDOUT
+[2021-04-11T10:00:33.339] [ERROR] errorLog - /users/queryOtherUsersInfo - error - Error: connect ETIMEDOUT
+[2021-04-11T10:00:57.901] [ERROR] errorLog - /users/queryOtherUsersInfo - error - Error: connect ETIMEDOUT
+[2021-04-11T10:01:00.850] [ERROR] errorLog - /users/queryOtherUsersInfo - error - Error: connect ETIMEDOUT
