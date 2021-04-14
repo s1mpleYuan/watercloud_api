@@ -943,3 +943,190 @@
 [2021-04-11T11:56:08.858] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
 [2021-04-11T11:57:48.539] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
 [2021-04-11T12:16:14.306] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-12T09:03:31.278] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-12T09:08:07.336] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-12T09:09:24.826] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-12T09:10:34.838] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-12T09:17:44.364] [INFO] api_use_log - /users/editUserInfo - success - 修改成功！
+[2021-04-12T09:17:58.867] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-12T09:18:11.642] [INFO] api_use_log - /users/editUserInfo - success - 修改成功！
+[2021-04-12T09:18:12.161] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-12T09:20:55.232] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-12T10:19:36.422] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-12T10:19:39.454] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-12T10:20:40.793] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-12T10:21:15.964] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-12T10:27:44.837] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-12T10:27:51.280] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-12T10:27:53.288] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-12T10:28:44.129] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-12T10:28:51.669] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-12T10:28:53.819] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-12T10:29:06.805] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-12T10:32:18.672] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-12T10:41:34.872] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-12T10:41:51.150] [INFO] api_use_log - /users/editUserInfo - success - 修改成功！
+[2021-04-12T10:41:51.573] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-12T10:42:26.448] [INFO] api_use_log - /users/editUserInfo - success - 修改成功！
+[2021-04-12T10:42:26.906] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-12T10:44:32.501] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-12T10:52:07.763] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-12T10:52:22.568] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-12T11:01:42.701] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-12T11:01:45.176] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-12T11:02:40.220] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-12T11:16:17.963] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-12T11:16:54.530] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-12T11:22:17.075] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-14T08:56:29.218] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-14T09:00:55.575] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T09:09:21.971] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-14T09:09:44.668] [INFO] api_use_log - /users/editUserInfo - success - 修改成功！
+[2021-04-14T09:10:31.990] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-14T09:10:47.485] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T09:10:59.752] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T09:42:46.649] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-14T10:28:21.821] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-14T10:54:56.018] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-14T10:55:01.900] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T10:55:10.284] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T10:55:43.318] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T10:57:27.513] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:01:27.326] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:03:07.462] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:04:24.309] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:05:53.033] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:20:12.435] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:20:47.207] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:21:01.580] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:22:17.499] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:24:55.485] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:25:39.031] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:26:01.938] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:26:09.962] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:26:13.117] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:37:29.398] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-14T11:40:27.051] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:40:37.216] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:40:39.151] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:41:10.029] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:41:51.032] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:44:02.761] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-14T11:44:12.837] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功,但数据库中没有数据！
+[2021-04-14T11:44:30.771] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功,但数据库中没有数据！
+[2021-04-14T11:45:42.714] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:47:28.278] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:47:34.168] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:48:06.371] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:48:11.393] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:49:09.369] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:50:16.777] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:50:18.060] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:50:29.745] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:51:16.280] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:52:58.392] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T11:56:25.569] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:00:02.369] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:00:56.900] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:01:05.369] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:01:37.198] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:02:04.565] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:02:34.103] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:03:07.670] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:03:25.237] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:03:26.008] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:03:26.877] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:03:59.951] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:04:22.485] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:04:25.663] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:04:29.038] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:04:55.508] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:05:03.296] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:06:04.682] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:06:33.877] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:06:52.539] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:06:53.649] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:08:01.277] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:08:37.175] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:08:53.304] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:09:35.799] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:11:07.005] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:12:57.316] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:13:31.090] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:15:03.505] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:16:11.182] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:16:29.381] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:17:58.089] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:18:20.221] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:18:56.170] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:20:26.618] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:21:15.444] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:30:17.972] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:31:02.114] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:31:03.791] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:36:43.867] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:41:27.199] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:42:57.401] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:44:34.291] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:46:54.328] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:46:58.593] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:47:00.541] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:47:22.853] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:47:25.917] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:49:24.892] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:53:05.239] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:53:22.163] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:53:27.504] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:54:36.415] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:55:31.301] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:57:30.469] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T12:58:48.559] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T13:00:56.531] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T13:05:32.989] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T13:05:42.149] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T13:05:57.600] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T13:06:34.521] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T13:07:04.897] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T13:08:03.138] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T13:08:06.733] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T13:08:29.424] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T13:08:44.204] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T13:08:55.901] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T13:09:06.469] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T13:09:19.352] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T13:11:58.854] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T13:30:33.102] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-14T13:58:16.892] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:01:15.117] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:02:07.688] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:02:50.811] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:03:18.011] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:03:43.399] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:06:52.448] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:07:35.850] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:08:12.629] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:08:33.388] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:09:08.307] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:09:52.110] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:12:16.123] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:16:58.090] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:19:14.191] [INFO] api_use_log - /users/login - success - admin01 登录成功
+[2021-04-14T14:21:26.818] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-14T14:21:31.433] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:23:20.695] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:24:20.036] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:42:59.186] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:43:01.618] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:45:35.185] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:45:39.566] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:46:24.408] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:47:05.339] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:47:29.059] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:47:53.288] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:48:11.680] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T14:50:10.080] [INFO] api_use_log - /users/queryOtherUsersInfo - success - 查询成功！
+[2021-04-14T15:22:13.040] [INFO] api_use_log - /users/login - success - admin00 登录成功
+[2021-04-14T15:36:20.098] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-14T15:39:21.604] [INFO] api_use_log - /users/login - success - admin00 登录成功
+[2021-04-14T16:09:02.424] [INFO] api_use_log - /users/login - success - user 登录成功
+[2021-04-14T16:09:12.116] [INFO] api_use_log - /users/login - success - admin 登录成功

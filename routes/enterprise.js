@@ -36,4 +36,15 @@ router.get('/getEnterpriseList',
   }
 )
 
+router.get('/queryAllEnterpriseCode', 
+  (req, res) => {
+    enterpriseServ.queryAllEnterpriseCode((err, result) => {
+      if (err) {
+        return res.sendResult(null, 500, `查询失败！ERR:${err}`);
+      } else if (result) {
+        return res.sendResult(result, 200, '查询成功！');
+      }
+    })
+  }
+)
 module.exports = router;

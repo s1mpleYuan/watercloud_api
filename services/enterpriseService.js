@@ -10,3 +10,14 @@ module.exports.queryEnterpriseList = (cb) => {
     cb(err, res);
   })
 }
+
+
+/**
+ * 查询所有的企业代码
+ * @param {Function} cb 回调函数
+ */
+module.exports.queryAllEnterpriseCode = (cb) => {
+  enterpriseDao.queryAllEnterpriseCode((err, res) => {
+    return cb(err, res);
+  });
+}

@@ -12,7 +12,7 @@ module.exports.login = (loginStr, pwd, cb) => {
   databaseModules.connect(conn, err => {
     console.log(err);
   });
-  const sql = `select username, account, enterprise_code as code, enabled, enterprise_auth as auth from admin where username = '${loginStr}' and password = '${pwd}' or account = '${loginStr}' and password = '${pwd}'`;
+  const sql = `select username, account, enterprise_code as code, enabled, enterprise_auth as auth from admin where account = '${loginStr}' and password = '${pwd}'`;
   conn.query(sql, (err, result) => {
     if (err) {
       cb(err);
@@ -21,7 +21,6 @@ module.exports.login = (loginStr, pwd, cb) => {
   })
   conn.end();
 }
-
 /**
  * 根据企业代码查询企业信息
  * @param {String} code 企业代码
@@ -42,7 +41,7 @@ module.exports.queryEnterpriseInfoOfCode = (code, cb) => {
 }
 
 /**
- * 根据企代码和账户权限查询该账户所能配置的其他用户的账户信息
+ * 根据企业代码和账户权限查询该账户所能配置的其他用户的账户信息
  * @param {String} code 企业代码
  * @param {String} auth 账户权限
  * @param {Function} cb 回调函数
@@ -52,11 +51,19 @@ module.exports.queryOtherUsersInfo = (code, auth, cb) => {
   databaseModules.connect(conn, err => {
     console.log(err);
   });
-  const sql = `select user_serials, username, account, enterprise_code as code, enterprise_auth as auth, enabled from admin where enterprise_code = '${code}' and enterprise_auth != '${auth}'`;
+  if (code === '000') {
+    // 系统总管理员
+    var sql = `select * from (select user_serials, username, account, a.enterprise_code as code, a.enterprise_auth as auth, enabled, enterprise_name as en_name, enterprise_addr as addr, legal_person, enterprise_tele as tel from admin as a INNER JOIN enterprise_information as b ON a.enterprise_code = b.enterprise_code) as b`;
+  } else {
+    var sql = `select * from (select user_serials, username, account, a.enterprise_code as code, a.enterprise_auth as auth, enabled, enterprise_name as en_name, enterprise_addr as addr, legal_person, enterprise_tele as tel from admin as a INNER JOIN enterprise_information as b ON a.enterprise_code = b.enterprise_code) as b where code = '${code}' and auth != '${auth}'`;
+  }
   conn.query(sql, (err, result) => {
     if (err) {
       cb(err);
-    } else cb(null, result);
+    } else {
+      const res = JSON.parse(JSON.stringify(result));
+      cb(null, res);
+    }
   });
   conn.end();
 }
@@ -80,20 +87,66 @@ module.exports.updateUserInfo = (sql, cb) => {
 }
 
 /**
- * 检查账户是否存在，以判断新建或修改账户是否合理
- * @param {String} sql sql语句
- * @param {Function} cb 回调函数
+ * 查询用户信息
+ * @param {*} sql 
+ * @param {*} cb 
  */
-module.exports.checkUserAccountReasonable = (sql, cb) => {
+module.exports.queryUserInfo = (sql, cb) => {
   const conn = databaseModules.getConnection();
-  databaseModules.connect(conn, err=> {
-    console.log(err);
-  });
+  databaseModules.connect(conn);
   conn.query(sql, (err, result) => {
     if (err) {
       cb(err);
-    } else cb(null, result);
+    } else {
+      const res = JSON.parse(JSON.stringify(result));
+      cb(null, res);
+    }
   });
   conn.end();
 }
+
+/**
+ * 插入用户
+ * @param {String} sql 插入sql语句
+ * @param {Function} cb 回调函数
+ */
+module.exports.createUser = (sql, cb) => {
+  const conn = databaseModules.getConnection();
+  databaseModules.connect(conn);
+  conn.query(sql, (err, result) => {
+    if (err) {
+      return cb(err);
+    } else {
+      const { affectedRows } = result;
+      if (affectedRows > 0) {
+        // 成功
+        cb(null, 'create success');
+      } else cb(null, 'create fail');
+    }
+  });
+  conn.end();
+}
+
+/**
+ * 删除用户
+ * @param {String} sql 删除用户
+ * @param {Function} cb 回调函数
+ */
+module.exports.deleteUser = (sql, cb) => {
+  const conn = databaseModules.getConnection();
+  databaseModules.connect(conn);
+  conn.query(sql, (err, res) => {
+    if (err) {
+      cb(err);
+    } else if (res) {
+      const { affectedRows } = res;
+      if (affectedRows > 0) {
+        // 删除成功
+        cb(null, 'delete success');
+      } else cb(null, 'delete fail');
+    }
+  });
+  conn.end();
+}
+
 

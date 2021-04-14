@@ -4,12 +4,11 @@ const mysql = require('mysql');
 // mysql.createConnection
 const db_config = require("config").get("db_config");
 
-module.exports.connect = (conn, cb) => {
+module.exports.connect = (conn) => {
 	conn.connect(err => {
 		if (err) {
-			console.log(err);
-			cb(err);
-			return;
+			// 连接失败 继续重新连接
+			setTimeout(this.connect(conn), 2000);
 		}
 	});
 }
