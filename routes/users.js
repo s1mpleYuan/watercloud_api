@@ -89,7 +89,7 @@ router.post('/queryOtherUsersInfo',
 )
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////// 编辑用户信息
-router.put('/editUserInfo',
+router.post('/editUserInfo',
   (req, res, next) => {
     const { userInfo } = req.body;
     if (!userInfo) {
@@ -146,7 +146,6 @@ router.put('/createUserInfo',
     const { userInfo } = req.body;
     userInfo.auth = Number(userInfo.auth);
     const { account, auth, code } = req.body.userInfo;
-    console.log(typeof auth);
     usersServ.checkUserLegitimacy('create', account, auth, code, (err, result) => {
       if (err) {
         return res.sendResult(err);
@@ -233,7 +232,6 @@ router.post('/queryUserInfoByConditions',
       if (err) {
         return res.sendResult(null, 500, err);
       } else if (result) {
-        console.log(result);
         return res.sendResult(result, 200, '查询成功！');
       }
     })

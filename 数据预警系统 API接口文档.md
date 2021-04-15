@@ -86,6 +86,175 @@
 }
 ```
 
+### 1.2.2 查询其他账户信息
+
++ 请求路径：`/users/queryOtherUsersInfo`
++ 请求类型：**post**
++ 请求参数：
+
+| 参数名 | 参数说明                   | 备注                               |
+| ------ | -------------------------- | ---------------------------------- |
+| code   | 当前账户所属企业的企业代码 | MySQL中数据库字段为enterprise_code |
+| auth   | 当前账户的账户权限         | MySQL中数据库字段为enterprise_auth |
+
++ 响应格式：
+
+```json
+{
+    "data": [
+        {
+            "user_serials": 1,
+            "username": "admin",
+            "account": "12345678",
+            "code": "000",
+            "auth": 0,
+            "enabled": 0,
+            "en_name": "ldu",
+            "addr": "山东省烟台市芝罘区红旗中路世回尧街道",
+            "legal_person": "aa",
+            "tel": "123-456-7890"
+        },
+        {
+            "user_serials": 2,
+            "username": "user",
+            "account": "123456789",
+            "code": "000",
+            "auth": 1,
+            "enabled": 0,
+            "en_name": "ldu",
+            "addr": "山东省烟台市芝罘区红旗中路世回尧街道",
+            "legal_person": "aa",
+            "tel": "123-456-7890"
+        }
+        // ...
+    ],
+    "code": 200,
+    "msg": "查询成功!"
+}
+```
+
+### 1.2.3 根据条件查询其他用户信息
+
++ 请求路径：`/users/queryUserInfoByConditions`
+
++ 请求方法：**post**
+
++ 请求参数：
+
+  | 参数名     | 参数类型 | 参数说明                   | 备注                                   |
+  | ---------- | -------- | -------------------------- | -------------------------------------- |
+  | auth       | String   | 当前账户的账户权限         |                                        |
+  | code       | String   | 当前账户所属企业的企业代码 |                                        |
+  | conditions | Array    | 筛选条件的键值对           | 数组元素为筛选字段-筛选值的key-value对 |
+
+  **conditions示例：**
+
+  ```json
+  {
+      "conditions": [
+          {
+              "key": "auth",
+              "value": "0"
+          }
+      ]
+  }
+  ```
+
++ 响应参数：
+
+```json
+{
+    "data": [
+        {
+            "user_serials": 1,
+            "username": "admin",
+            "account": "12345678",
+            "code": "000",
+            "auth": 0,
+            "enabled": 0,
+            "en_name": "ldu",
+            "addr": "山东省烟台市芝罘区红旗中路世回尧街道",
+            "legal_person": "aa",
+            "tel": "123-456-7890"
+        },
+        {
+            "user_serials": 2,
+            "username": "admin00",
+            "account": "147852369",
+            "code": "001",
+            "auth": 0,
+            "enabled": 0,
+            "en_name": "AAA公司",
+            "addr": "acs",
+            "legal_person": "Bob",
+            "tel": "123-456-7890"
+        }
+    ],
+    "code": 200,
+    "msg": "查询成功！"
+}
+```
+
+### 1.2.4 编辑账户信息
+
++ 请求路径：`/users/createUserInfo`
++ 请求方法：**post**
++ 请求参数：
+
+| 参数名   | 参数类型 | 参数说明                         | 备注 |
+| -------- | -------- | -------------------------------- | ---- |
+| username | String   | 编辑后的新账户名                 |      |
+| account  | String   | 编辑后的新账户                   |      |
+| code     | String   | 当前编辑的账户所属企业的企业编码 |      |
+| auth     | Number   | 当前编辑账户的权限               |      |
+| enabled  | Number   | 编辑后的是否被禁用               |      |
+
+以上参数据要放到一个 **userInfo**对象中传入：
+
+```json
+{
+    "userInfo":{
+        "username": "user",
+        "account": "123456789",
+        "code": "000",
+        "auth": 1,
+        "enabled": 1
+    }
+}
+```
+
++ 响应参数：
+
+```json
+{
+    "data": null,
+    "code": 202,
+    "msg": "修改成功！"
+}
+```
+
+### 1.2.5 删除账户
+
++ 请求路径：`/users/deleteUserInfo`
++ 请求类型：**get**
++ 请求参数：
+
+| 参数名  | 参数说明     | 备注 |
+| ------- | ------------ | ---- |
+| account | 要删除的账号 |      |
+
++ 响应参数：
+
+```json
+{
+    "data": null,
+    "code": 203,
+    "msg": "删除成功！"
+}
+```
+
+
+
 ## 1.3 企业 Enterprise
 
 ### 1.3.1 查询所有注册企业信息

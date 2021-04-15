@@ -65,26 +65,16 @@ module.exports.queryOtherUsersInfo = (code, auth, cb) => {
  */
 module.exports.updateUserInfo = (userInfo, cb) => {
   const { username, account, code, auth, enabled, en_name, addr, legal_person, tel } = userInfo;
-  const sql_EnterpriseInfo = `update enterprise_information set enterprise_name = '${en_name}', enterprise_addr = '${addr}', legal_person = '${legal_person}', enterprise_tele = '${tel}' where enterprise_code = '${code}'`;
-  usersDao.updateUserInfo(sql_EnterpriseInfo, (err, res) => {
+  const sql_adminUser = `update admin set username = '${username}', enterprise_auth = '${auth}', enabled = '${enabled}' where account = '${account}'`;
+  usersDao.updateUserInfo(sql_adminUser, (err, res) => {
     if (err) {
       return cb(err);
     } else if (res) {
       const { affectedRows } = res;
       if (affectedRows > 0) {
-        const sql_adminUser = `update admin set username = '${username}', enterprise_auth = '${auth}', enabled = '${enabled}' where account = '${account}'`;
-        usersDao.updateUserInfo(sql_adminUser, (err, res) => {
-          if (err) {
-            return cb(err);
-          } else if (res) {
-            const { affectedRows } = res;
-            if (affectedRows > 0) {
-              return cb(null, 'success');
-            } else {
-              return cb(null, 'fail');
-            }
-          }
-        });
+        return cb(null, 'success');
+      } else {
+        return cb(null, 'fail');
       }
     }
   });
@@ -218,7 +208,7 @@ module.exports.queryUserInfoListByConditions = (code, auth, conditions, cb) => {
     if (err) {
       cb(err);
     } else if (res) {
-      let final = res.filter(item=> {
+      let final = res.filter(item => {
         let cnt = 0;
         for (const i in conditions) {
           if (item[conditions[i].key] === conditions[i].value) {
@@ -232,7 +222,6 @@ module.exports.queryUserInfoListByConditions = (code, auth, conditions, cb) => {
       for (const k in final) {
         final[k].user_serials = Number(k) + 1;
       }
-      console.log(final);
       cb(null, final);
     }
   })
