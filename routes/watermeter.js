@@ -22,17 +22,11 @@ router.post('/queryWaterMeterCopyRecords',
     const { condition, fields } = req.body;
     watermeterServ.queryWaterMeterCopyRecordOfCondition(condition, fields, (err, queryResult) => {
       if (err) {
-        const log = log4js.setLog("/watermeter/queryWaterMeterCopyRecords", "error", err);
-        log4js.loggerOutput("ERROR", log);
         return res.sendResult(null, 500, err);
       }
       if (!queryResult || !queryResult.length || queryResult.length == 0) {
-        const log = log4js.setLog("/watermeter/queryWaterMeterCopyRecords", "success", '查询成功,但数据库中没有数据！');
-        log4js.loggerOutput("INFO", log);
         return res.sendResult([], 200, '查询成功,但数据库中没有数据！');
       };
-      const log = log4js.setLog("/watermeter/queryWaterMeterCopyRecords", "success", '查询成功！');
-      log4js.loggerOutput("INFO", log);
       return res.sendResult(queryResult, 200, '查询成功！');
     })
   }

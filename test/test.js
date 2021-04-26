@@ -43,6 +43,6 @@
  */
 const log4js = require('../utils/logger');
 
-const log = log4js.setLog('login', 'fail', '登录失败');
-log4js.loggerOutput("INFO", log);
+// const log = log4js.setLog('login', 'fail', '登录失败');
+// log4js.loggerOutput("INFO", log);
 

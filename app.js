@@ -28,7 +28,11 @@ app.all('*',
 		/*让options请求快速返回*/ else next()
 	},
 	(req, res, next) => {
+		// console.log(req);
 		const { originalUrl, headers } = req;
+		let path = originalUrl.split('?')[0] || originalUrl;
+		// console.log(path);
+		log4js.logger(path, 'API USE');
 		if (originalUrl === '/users/login') {
 			next();
 		} else {
@@ -53,9 +57,6 @@ app.all('*',
 					}
 					return res.sendResult(null, 401, err);
 				}
-				// const log = log4js.setLog('TokenAuth', 'success', 'token验证通过');
-				// log4js.loggerOutput("DEBUG", log);
-				// console.log('校验通过');
 				next();
 			});
 		}
@@ -77,7 +78,11 @@ app.get('/test', (req, res, next) => {
 })
 app.listen(port,
 	() => {
-		const log = log4js.setLog("server", "start", `watercloud app listening on http://localhost:${port}`);
-		log4js.loggerOutput("TRACE", log);
+		// const log = log4js.setLog("server", "start", `watercloud app listening on http://localhost:${port}`);
+		// log4js.loggerOutput("TRACE", log);
+		// log4js.logger('waterclound server', 'CONSOLE', '');
+		console.log('*******************************************************************');
+		console.log(`*     watercloud api server listening on http://localhost:${port}    *`);
+		console.log('*******************************************************************');
 	}
 );

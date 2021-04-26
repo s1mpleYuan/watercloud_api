@@ -21,24 +21,16 @@ router.post('/login',
       pwd,
       (err, loginResult) => {
         if (err) {
-          const log = log4js.setLog("/users/login", "error", err);
-          log4js.loggerOutput("ERROR", log)
           return res.sendResult(null, 500, err);
         }
         if (!loginResult) {
-          const log = log4js.setLog("/users/login", "failure", "登录失败，请检查登录账户和密码的正确性");
-          log4js.loggerOutput("DEBUG", log)
           return res.sendResult(null, 404, '登录失败，请检查登录账户和密码的正确性');
         } else {
           const { enabled } = loginResult;
           if (enabled == '0') {
-            const log = log4js.setLog("/users/login", "failure", "登录失败，该账户已被封禁，请联系管理员");
-            log4js.loggerOutput("DEBUG", log)
             return res.sendResult(null, 404, '登录失败，该账户已被封禁，请联系管理员！');
           } else {
             loginResult["token"] = authorization.createToken();
-            const log = log4js.setLog("/users/login", "success", `${loginResult.username} 登录成功`);
-            log4js.loggerOutput("INFO", log);
             res.sendResult(loginResult, 200, '登录成功');
           }
         }
@@ -53,16 +45,10 @@ router.post('/queryOtherUsersInfo',
   (req, res, next) => {
     const { code, auth } = req.body;
     if (!code || code == "") {
-      const log = log4js.setLog("/users/queryOtherUsersInfo", "error", '请传入code参数');
-      log4js.loggerOutput("ERROR", log)
       return res.sendResult(null, 400, '请传入code参数');
     } else if (!auth || auth == "") {
-      const log = log4js.setLog("/users/queryOtherUsersInfo", "error", '请传入auth参数');
-      log4js.loggerOutput("ERROR", log)
       return res.sendResult(null, 400, '请传入auth参数');
     } else if (auth == '1') {
-      const log = log4js.setLog("/users/queryOtherUsersInfo", "error", '非管理员账户没有配置其他用户的权限！');
-      log4js.loggerOutput("ERROR", log)
       return res.sendResult(null, 403, '非管理员账户没有配置其他用户的权限！');
     } else next();
   },
@@ -93,8 +79,6 @@ router.post('/editUserInfo',
   (req, res, next) => {
     const { userInfo } = req.body;
     if (!userInfo) {
-      const log = log4js.setLog("/users/editUserInfo", "error", '参数不能为空！');
-      log4js.loggerOutput("ERROR", log)
       return res.sendResult(null, 400, '参数不能为空！');
     }
     userInfo.enabled = Number(userInfo.enabled);
@@ -135,8 +119,6 @@ router.put('/createUserInfo',
   (req, res, next) => {
     const { userInfo } = req.body;
     if (!userInfo) {
-      const log = log4js.setLog("/users/editUserInfo", "error", '参数不能为空！');
-      log4js.loggerOutput("ERROR", log)
       return res.sendResult(null, 400, '参数不能为空！');
     }
     userInfo.enabled = Number(userInfo.enabled);

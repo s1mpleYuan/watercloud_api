@@ -32,43 +32,25 @@ log4js.configure({
   }
 });
 
-// module.exports.getLogger = (loggerName) => {
-//   return log4js.getLogger(loggerName);
-// }
 
 const consoleLogger = log4js.getLogger();
 const api_use_logger = log4js.getLogger("api_use_log");
 const errorLogger = log4js.getLogger("errorLog");
 
-module.exports.setLog = (apiName, result, message) => {
-  return {
-    apiName,
-    result,
-    message
-  };
-}
-module.exports.loggerOutput = (level, log) => {
-  const { apiName, result, message } = log; 
+module.exports.logger = (api, level, msg) => {
   switch (level) {
-    case "TRACE":
-      consoleLogger.trace(`${apiName} - ${result} - ${message}`);
+    case 'CONSOLE':
+      consoleLogger.trace(`api path: ${api} - is used`);
       break;
-    case "DEBUG":
-      consoleLogger.debug(`${apiName} - ${result} - ${message}`);
+    case 'API USE':
+      // consoleLogger.trace(`api path: ${api} - is used`);
+      api_use_logger.info(`api path: ${api} - is used`);
       break;
-    case "INFO":
-      api_use_logger.info(`${apiName} - ${result} - ${message}`);
-      break;
-    case "WARN":
-      api_use_logger.warn(`${apiName} - ${result} - ${message}`);
-      break;
-    case "ERROR":
-      errorLogger.error(`${apiName} - ${result} - ${message}`);
-      break;
-    case "FATAL":
-      errorLogger.fatal(`${apiName} - ${result} - ${message}`);
+    case 'ERROR':
+      // consoleLogger.error(`api path: ${api} - is errored - ${msg}`);
+      errorLogger.error(`api path:${api} - error: ${msg}`)
       break;
     default:
       break;
   }
-}
+};
