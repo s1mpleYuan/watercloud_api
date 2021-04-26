@@ -306,44 +306,4 @@ router.get('/getChildRegionById',
   }
 )
 
-const axios = require('axios');
-
-router.get('/queryWeather',
-  (req, res, next) => {
-    const { city, extensions } = req.query;
-    if (!city) {
-      return res.sendResult(null, 400, '请传入city参数');
-    } else if (!extensions) {
-      return res.sendResult(null, 400, '请传入extensions参数');
-    } else next();
-  },
-  async (req, res, next) => {
-    const { city, extensions } = req.query;
-    let { data } = await axios.get('https://restapi.amap.com/v3/weather/weatherInfo', {
-      params: {
-        key: '62505f092b0b562e14d603265f915e82',
-        city,
-        extensions
-      }
-    });
-    const { status, infocode } = data;
-    if (status === '1') {
-
-      if (extensions === 'base') { // 实时天气
-        // let livesWeather = 
-        const { lives } = data;
-        return res.sendResult(lives[0], 200, '查询成功！');
-      } else {
-        const { forecasts } = data;
-        return res.sendResult(forecasts[0].casts, 200, '查询成功！');
-      }
-
-    } else {
-      let type = extensions === 'base' ? '实时天气' : '预报天气';
-      return res.sendResult(null, 500, `查询${type}失败！infocode: ${infocode}`);
-    }
-  }
-)
-
-
 module.exports = router;

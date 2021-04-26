@@ -11,5 +11,8 @@
 		"sub": "tokenAuth",
 		"secretKey":"yuanqingyan",
 		"expiresIn": "24h"
+	},
+	"amap_config" : {
+		"key": "62505f092b0b562e14d603265f915e82"
 	}
 }
