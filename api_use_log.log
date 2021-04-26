@@ -1132,3 +1132,103 @@
 [2021-04-14T16:09:12.116] [INFO] api_use_log - /users/login - success - admin 登录成功
 [2021-04-15T09:07:55.529] [INFO] api_use_log - /users/login - success - admin 登录成功
 [2021-04-15T09:30:19.050] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-15T11:09:33.759] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-15T11:10:55.955] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-15T11:11:48.570] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T14:28:49.839] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-19T14:29:22.003] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T14:30:07.054] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T14:32:24.534] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T14:33:24.483] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T14:33:37.362] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T14:34:00.616] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T14:34:11.830] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T14:34:16.524] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T14:35:14.398] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T14:35:42.861] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T14:37:15.244] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T14:37:56.199] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T15:06:17.093] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-19T15:07:50.206] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-19T15:08:25.262] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-19T15:08:55.250] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-19T15:09:58.609] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-19T15:10:17.947] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-19T15:10:52.472] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-19T15:11:36.204] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-19T15:12:03.678] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-19T15:12:12.146] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-19T15:19:48.162] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-19T15:20:15.671] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T15:20:56.090] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T15:24:05.066] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T15:24:20.177] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T15:25:07.453] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T15:26:20.896] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T15:26:56.197] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T15:27:20.646] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T15:27:33.983] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T15:27:35.019] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T15:27:50.069] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T15:27:56.335] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T15:28:25.938] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T15:29:06.633] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T15:29:24.893] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T15:29:58.984] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T15:30:19.041] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T15:30:25.795] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T16:16:27.329] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T16:16:38.792] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T16:17:29.305] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T16:18:07.370] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T16:18:29.491] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T16:19:46.443] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T17:01:58.183] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-19T17:44:21.330] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-19T22:30:03.755] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-19T22:30:22.835] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-19T22:36:44.647] [INFO] api_use_log - /users/login - success - admin00 登录成功
+[2021-04-19T22:37:32.789] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-19T22:39:26.001] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-20T10:41:37.871] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-20T17:08:19.026] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-20T17:50:55.415] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-20T20:26:21.809] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-20T20:46:37.050] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-20T21:52:23.162] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-20T21:55:06.448] [INFO] api_use_log - /users/login - success - 企业测试普通账户 登录成功
+[2021-04-20T21:57:06.450] [INFO] api_use_log - /users/login - success - 企业测试普通账户 登录成功
+[2021-04-20T21:57:27.439] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-20T22:00:41.824] [INFO] api_use_log - /users/login - success - 企业测试普通账户 登录成功
+[2021-04-20T22:10:01.161] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-20T22:10:56.086] [INFO] api_use_log - /users/login - success - 企业测试普通账户 登录成功
+[2021-04-20T22:10:58.660] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-20T22:11:39.944] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-20T22:22:51.309] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-20T22:24:59.610] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-20T22:25:27.778] [INFO] api_use_log - /users/login - success - 企业测试普通账户 登录成功
+[2021-04-20T22:25:36.300] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-20T22:27:05.902] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-22T11:50:12.309] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-22T11:58:07.763] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-22T11:58:40.197] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-22T12:01:48.258] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-22T17:30:50.304] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-22T17:38:37.721] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-22T19:37:03.531] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-22T20:21:25.826] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-22T20:27:10.636] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-22T20:28:32.707] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-22T20:28:53.408] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-22T20:38:50.055] [INFO] api_use_log - /users/login - success - 企业测试普通账户 登录成功
+[2021-04-22T20:41:46.402] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-22T20:41:52.586] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-25T14:54:43.018] [INFO] api_use_log - /users/login - success - 企业测试普通账户 登录成功
+[2021-04-25T14:58:12.494] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-25T15:04:22.722] [INFO] api_use_log - /users/login - success - 企业测试普通账户 登录成功
+[2021-04-25T15:04:48.855] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-25T15:05:14.657] [INFO] api_use_log - /watermeter/queryWaterMeterCopyRecords - success - 查询成功！
+[2021-04-25T15:42:32.077] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-25T16:14:37.185] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-25T16:16:19.201] [INFO] api_use_log - /users/login - success - admin 登录成功
+[2021-04-25T16:37:04.899] [INFO] api_use_log - /users/login - success - admin 登录成功

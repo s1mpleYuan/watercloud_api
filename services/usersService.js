@@ -1,8 +1,9 @@
 var path = require('path');
 var usersDao = require(path.join(process.cwd(), 'dao/usersDao'));
 const md5 = require('md5');
-const { connect } = require('../modules/database');
 const _ = require('loadsh');
+const { setTreeData, getLeafBranch, getChildNodeById } = require('../utils/tree');
+
 
 /**
  * 登录
@@ -225,4 +226,62 @@ module.exports.queryUserInfoListByConditions = (code, auth, conditions, cb) => {
       cb(null, final);
     }
   })
+}
+
+/**
+ * 获取当前账户下所能管理的所有区域
+ * @param {String} id 当前账户对应的行政编码
+ * @param {Function} cb 回调函数
+ */
+module.exports.getAllAccountRegion = (cb) => {
+  const sql = 'select id, region_name as name, region_level as level, parent from account_region';
+  usersDao.getAllAccountRegion(sql, (err, res) => {
+    if (err) {
+      return cb(err);
+    } else if (res) {
+      let tree = setTreeData(res);
+      return cb(null, tree);
+    }
+  });
+}
+/**
+ * 根据id获取树形结构中包含该id节点的分支
+ * @param {Array} tree 树形结构数据
+ * @param {String} id 要获取的最小层级的节点id
+ * @param {Function} cb 回调函数
+ * @returns 
+ */
+module.exports.getRegionBranch = (tree, id, cb) => {
+  const root = tree[0];
+  let branch = getLeafBranch(root, id);
+  let final = [];
+  branch.forEach((item, index) => {
+    if (item.id !== '1') {
+      if (index === branch.length - 1) {
+        // 最后一个时
+        final.push(item);
+      } else {
+        final.push({
+          id: item.id,
+          name: item.name
+        });
+      }
+    }
+  });
+  return cb(null, final);
+}
+
+module.exports.getChildRegionById = (tree, id, cb) => {
+  const root = tree[0];
+  let node = getChildNodeById(root, id);
+  var childNodes = []
+  if (node) {
+    node.children.forEach(item => {
+      childNodes.push({
+        id: item.id,
+        name: item.name
+      });
+    });
+  }
+  return cb(null, childNodes);
 }

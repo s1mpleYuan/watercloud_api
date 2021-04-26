@@ -68,6 +68,7 @@ app.all('*',
 app.use('/users', require('./routes/users'));
 app.use('/enterprises', require('./routes/enterprise'));
 app.use('/watermeter', require('./routes/watermeter'));
+app.use('/chart', require('./routes/chart'));
 
 
 app.get('/test', (req, res, next) => {

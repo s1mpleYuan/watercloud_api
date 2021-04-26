@@ -8,6 +8,7 @@ module.exports.connect = (conn) => {
 	conn.connect(err => {
 		if (err) {
 			// 连接失败 继续重新连接
+			console.log(err);
 			setTimeout(this.connect(conn), 2000);
 		}
 	});

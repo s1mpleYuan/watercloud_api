@@ -31,7 +31,7 @@ module.exports.queryEnterpriseInfoOfCode = (code, cb) => {
   databaseModules.connect(conn, err => {
     console.log(err);
   });
-  const sql = `select enterprise_code AS code, enterprise_name AS en_name, enterprise_addr AS addr, legal_person, enterprise_tele AS tel from enterprise_information where enterprise_code = '${code}'`;
+  const sql = `select enterprise_code AS code, enterprise_name AS en_name, enterprise_addr AS addr, legal_person, enterprise_tele AS tel, region_id as region from enterprise_information where enterprise_code = '${code}'`;
   conn.query(sql, (err, result) => {
     if (err) {
       cb(err);
@@ -53,7 +53,7 @@ module.exports.queryOtherUsersInfo = (code, auth, cb) => {
   });
   if (code === '000') {
     // 系统总管理员
-    var sql = `select * from (select user_serials, username, account, a.enterprise_code as code, a.enterprise_auth as auth, enabled, enterprise_name as en_name, enterprise_addr as addr, legal_person, enterprise_tele as tel from admin as a INNER JOIN enterprise_information as b ON a.enterprise_code = b.enterprise_code) as b`;
+    var sql = `select * from (select user_serials, username, account, a.enterprise_code as code, a.enterprise_auth as auth, enabled, enterprise_name as en_name, enterprise_addr as addr, legal_person, enterprise_tele as tel from admin as a INNER JOIN enterprise_information as b ON a.enterprise_code = b.enterprise_code) as b where code = '000' and auth != 0 or code != '000'`;
   } else {
     var sql = `select * from (select user_serials, username, account, a.enterprise_code as code, a.enterprise_auth as auth, enabled, enterprise_name as en_name, enterprise_addr as addr, legal_person, enterprise_tele as tel from admin as a INNER JOIN enterprise_information as b ON a.enterprise_code = b.enterprise_code) as b where code = '${code}' and auth != '${auth}'`;
   }
@@ -149,4 +149,21 @@ module.exports.deleteUser = (sql, cb) => {
   conn.end();
 }
 
-
+/**
+ * 查询所有的账户区域
+ * @param {String} sql 查询语句
+ * @param {Function} cb 回调函数
+ */
+module.exports.getAllAccountRegion = (sql, cb) => {
+  const conn = databaseModules.getConnection();
+  databaseModules.connect(conn);
+  conn.query(sql, (err, res) => {
+    if (err) {
+      cb(err);
+    } else {
+      let result = JSON.parse(JSON.stringify(res));
+      cb(null, result);
+    }
+  });
+  conn.end();
+}

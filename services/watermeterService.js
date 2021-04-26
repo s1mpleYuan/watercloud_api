@@ -39,6 +39,7 @@ module.exports.queryWaterMeterCopyRecordOfCondition = (condition, fields, cb) =>
     } else {
       for (const i in res) {
         const { Copy_time, Equipment_time } = res[i];
+        res[i].Record_id = Number(i) + 1;
         if (Copy_time) {
           res[i].Copy_time = dayjs(Copy_time).format('YYYY-MM-DD HH:mm:ss');
         }

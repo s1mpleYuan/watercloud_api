@@ -31,7 +31,7 @@ router.post('/login',
           return res.sendResult(null, 404, '登录失败，请检查登录账户和密码的正确性');
         } else {
           const { enabled } = loginResult;
-          if (enabled == '1') {
+          if (enabled == '0') {
             const log = log4js.setLog("/users/login", "failure", "登录失败，该账户已被封禁，请联系管理员");
             log4js.loggerOutput("DEBUG", log)
             return res.sendResult(null, 404, '登录失败，该账户已被封禁，请联系管理员！');
@@ -235,6 +235,113 @@ router.post('/queryUserInfoByConditions',
         return res.sendResult(result, 200, '查询成功！');
       }
     })
+  }
+)
+
+
+////////////////////////////////////////////////////////////////////// 获取行政编码
+router.get('/getAllAccountRegion',
+  (req, res) => {
+    usersServ.getAllAccountRegion((err, result) => {
+      if (err) {
+        return res.sendResult(null, 500, err);
+      } else if (result) {
+        return res.sendResult(result, 200, '获取成功！');
+      }
+    })
+  }
+)
+
+////////////////////////////////////////////////////////////////////// 获取当前行政编码的所有行政区域层级
+router.get('/getRegionLevelOfId',
+  (req, res, next) => {
+    const { id } = req.query;
+    if (!id) {
+      return res.sendResult(null, 400, '请传入id参数');
+    } else next();
+  },
+  (req, res) => {
+    const { id } = req.query;
+    // 先获取所有区域的数据
+    usersServ.getAllAccountRegion((err, result) => {
+      if (err) {
+        return res.sendResult(null, 500, err);
+      } else if (result) {
+        usersServ.getRegionBranch(result, id, (err, result2) => {
+          if (err) {
+            return res.sendResult(null, 500, err);
+          } else if (result2) {
+            return res.sendResult(result2, 200, '111');
+          }
+        })
+        // return res.sendResult(null, 200, '123');
+      }
+    })
+  }
+)
+
+//////////////////////////////////////////////////////////////////// 获取当前行政区域下属的行政区域数组
+router.get('/getChildRegionById',
+  (req, res, next) => {
+    const { id } = req.query;
+    if (!id) {
+      return res.sendResult(null, 400, '请传入id参数');
+    } else next();
+  },
+  (req, res) => {
+    const { id } = req.query;
+    usersServ.getAllAccountRegion((err, result) => {
+      if (err) {
+        return res.sendResult(null, 500, err);
+      } else if (result) {
+        usersServ.getChildRegionById(result, id, (err, result2) => {
+          if (err) {
+            return res.sendResult(null, 500, err);
+          } else if (result2) {
+            return res.sendResult(result2, 200, '查询成功！');
+          }
+        });
+      }
+    });
+  }
+)
+
+const axios = require('axios');
+
+router.get('/queryWeather',
+  (req, res, next) => {
+    const { city, extensions } = req.query;
+    if (!city) {
+      return res.sendResult(null, 400, '请传入city参数');
+    } else if (!extensions) {
+      return res.sendResult(null, 400, '请传入extensions参数');
+    } else next();
+  },
+  async (req, res, next) => {
+    const { city, extensions } = req.query;
+    let { data } = await axios.get('https://restapi.amap.com/v3/weather/weatherInfo', {
+      params: {
+        key: '62505f092b0b562e14d603265f915e82',
+        city,
+        extensions
+      }
+    });
+    const { status, infocode } = data;
+    if (status === '1') {
+
+      if (extensions === 'base') { // 实时天气
+        // let livesWeather = 
+        const { lives } = data;
+        return res.sendResult(lives[0], 200, '查询成功！');
+      } else {
+        const { forecasts } = data;
+        return res.sendResult(forecasts[0].casts, 200, '查询成功！');
+      }
+
+    } else {
+      let type = extensions === 'base' ? '实时天气' : '预报天气';
+      return res.sendResult(null, 500, `查询${type}失败！infocode: ${infocode}`);
+    }
   }
 )
 

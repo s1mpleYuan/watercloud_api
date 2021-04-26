@@ -5,9 +5,7 @@ const log4js = require('../utils/logger');
 // 获取业务逻辑模块
 const watermeterServ = require('../services/watermeterService');
 
-/**
-  根据条件查询水表抄收记录
- */
+////////////////////////////////////////////////////////// 根据条件查询水表抄收记录
 router.post('/queryWaterMeterCopyRecords',
   (req, res, next) => {
     const { condition, fields } = req.body;
