@@ -10,7 +10,7 @@ router.get('/queryWeather',
     if (!city) {
       return res.sendResult(null, 400, '请传入city参数');
     } else if (!extensions) {
-      return res.sendResult(null, 400, '请传入conditions参数');
+      return res.sendResult(null, 400, '请传入extensions参数');
     } else if (extensions !== 'base' && extensions !== 'all') {
       return res.sendResult(null, 400, 'extensions参数只能为base或all');
     } else next();
