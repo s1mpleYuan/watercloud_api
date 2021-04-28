@@ -167,3 +167,23 @@ module.exports.getAllAccountRegion = (sql, cb) => {
   });
   conn.end();
 }
+
+/**
+ * 根据区域编码id获取区域名称
+ * @param {String} id 行政区域ID
+ * @param {*} cb 
+ */
+module.exports.getRegionNameById = (id, cb) => {
+  const conn = databaseModules.getConnection();
+  databaseModules.connect(conn);
+  const sql = `select region_name as name from account_region where id = ${id}`;
+  conn.query(sql, (err, res) => {
+    if (err) {
+      cb(err);
+    } else {
+      let final = res[0];
+      cb(null, final);
+    }
+  });
+  conn.end();
+}

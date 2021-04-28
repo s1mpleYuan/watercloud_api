@@ -287,5 +287,4 @@ router.get('/getChildRegionById',
     });
   }
 )
-
 module.exports = router;

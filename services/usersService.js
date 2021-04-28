@@ -285,3 +285,21 @@ module.exports.getChildRegionById = (tree, id, cb) => {
   }
   return cb(null, childNodes);
 }
+
+
+/**
+ * 根据区域编码id获取区域名称
+ * @param {String} id 区域编码
+ * @param {*} cb 
+ */
+module.exports.getRegionName = (id) => {
+  return new Promise((resolve, reject) => {
+    usersDao.getRegionNameById(id, (err, result) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(result);
+      }
+    });
+  })
+}

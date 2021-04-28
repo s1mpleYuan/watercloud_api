@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // 设置统一的响应格式
 var resextra = require('./modules/resextra');
+const multer = require("multer");
 app.use(resextra);
 
 //设置跨域访问
@@ -73,9 +74,22 @@ app.use('/chart', require('./routes/chart'));
 app.use('/all', require('./routes/all'));
 
 
-app.get('/test', (req, res, next) => {
+app.use('/test', (req, res, next) => {
 	res.sendResult(null, 200, 'waterclound接口测试成功');
 })
+
+
+// 图片上传
+app.use('/upload', require('./routes/upload'));
+
+
+
+
+
+
+
+
+
 app.listen(port,
 	() => {
 		// const log = log4js.setLog("server", "start", `watercloud app listening on http://localhost:${port}`);
